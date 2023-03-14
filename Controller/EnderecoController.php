@@ -9,7 +9,18 @@
     { 
         public static function GetCepByLogradouro() : void
         {
+            try{
 
+                $logradouro = $_GET['logradouro'];
+
+                $model = new EnderecoModel();
+                $model-> GetCepByLogradouro($logradouro);
+
+                parent::GetResponseAsJson($model->rows);
+            }catch(Exception $e){
+
+                //*parent::GetExceptionAsJSON($e);
+            }
         }
 
         public static function GetLogradouroByBairroAndCidade() : void
