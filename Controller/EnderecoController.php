@@ -19,7 +19,7 @@
                 parent::GetResponseAsJson($model->rows);
             }catch(Exception $e){
 
-                //*parent::GetExceptionAsJSON($e);
+                parent::GetExceptionAsJSON($e);
             }
         }
 
