@@ -86,8 +86,8 @@
             {
                 $uf = $_GET['uf'];
 
-                $model = new EnderecoModel();
-                //$model->getCidadesByUF($uf);
+                $model = new CidadeModel();
+                $model->getCidadesByUF($uf);
 
                 parent::GetResponseAsJson($model->rows);
             
