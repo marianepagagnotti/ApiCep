@@ -6,27 +6,28 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($url)
 {
-    case 'endereco/by-cep':
+    case '/endereco/by-cep':
         EnderecoController::GetLogradouroByCep();
     break;
 
-    case 'cep/by-endereco':
+    case '/cep/by-endereco':
         EnderecoController::GetCepByLogradouro();
     break;
 
-    case 'logradouro/by-bairro':
+    case '/logradouro/by-bairro':
         EnderecoController::GetLogradouroByBairroAndCidade();
     break;
 
-    case 'bairro/by-cidade':
+    case '/bairro/by-cidade':
         EnderecoController::GetLogradouroByCep();
     break;
 
-    case 'cidade/by-uf':
-        EnderecoController::GetLogradouroByCep();
+    case '/cidade/by-uf':
+        EnderecoController::GetCidadesByUF();
     break;
 
     default:
         http_response_code(403);
+        //echo $url;
     break;
 }
